@@ -2,7 +2,7 @@
 driver:
   name: vagrant
   customize:
-    cpus: 4
+    cpus: 8
     memory: 4096
 
 provisioner:
@@ -16,3 +16,5 @@ suites:
     run_list:
       - recipe[buildbot::default]
     attributes:
+      apt:
+        compile_time_update: true

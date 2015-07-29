@@ -7,3 +7,7 @@ long_description 'Installs/Configures buildbot'
 version          '0.0.1'
 
 supports 'ubuntu', '>= 12.04'
+
+depends 'apt'
+depends 'build-essential'
+depends 'python', '~> 1.4'
