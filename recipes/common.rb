@@ -21,5 +21,3 @@ include_recipe 'apt'
 include_recipe 'build-essential'
 
 package 'python-twisted'
-
-include_recipe 'buildbot::slave'
