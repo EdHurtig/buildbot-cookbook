@@ -1,4 +1,7 @@
 action :install do
+  user new_resource.owner
+  group new_resource.group
+
   directory new_resource.path do
     owner new_resource.owner
     group new_resource.group
@@ -15,7 +18,7 @@ action :install do
     virtualenv new_resource.path
   end
 
-  execute 'name' do
+  execute "create-slave #{new_resource.name}" do
     command ". bin/activate && buildslave create-slave #{new_resource.path} #{new_resource.master_host}:#{new_resource.master_port} #{new_resource.name} #{new_resource.password} #{new_resource.custom}"
     cwd new_resource.path
   end
